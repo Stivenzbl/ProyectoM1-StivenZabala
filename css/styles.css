@@ -1,0 +1,178 @@
+/* Reset de estilos para eliminar márgenes y padding predeterminados */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Variable paleta de marca */
+    --color-primario: hsl(330, 85%, 55%);
+    --color-claro: hsl(330, 85%, 72%);
+    --color-oscuro: hsl(330, 75%, 40%);
+
+/* acento cian */ 
+    --color-acento: hsl(180, 100%, 50%);
+    --color-acento--oscuro: hsl(180, 100%, 30%);
+
+    /* NEUTROS HUE FRIO 220 */
+    --color-fondo: hsl(220, 30%, 98%);
+    --color-superficial: hsl(220, 20%, 90%);
+    --color-borde: hsl(220, 20%, 80%);
+    --color-texto: hsl(220, 20%, 20%);
+    --color-texto--suave: hsl(220, 20%, 40%);
+
+}
+
+/* Estilos para el cuerpo de la página */
+.body {
+    font-family: "Nunito", sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Fredoka", sans-serif;
+    line-height: 1.2;
+    color: var(--color-texto);
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+/* layout header */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--color-superficial);
+    border-bottom: 1px solid var(--color-borde);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.nav__logo {
+    font-family: "Fredoka", sans-serif;
+    font-size: 1.5rem;
+    color: var(--color-primario);
+    text-decoration: none;
+}
+
+.nav__links {
+    display: flex;
+    gap: 1.25rem;
+    list-style: none;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav__link:hover {
+    color: var(--color-primario);
+}
+
+/* layout main */
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+
+}
+
+main h2 {
+    margin-bottom: 1rem;
+}
+
+/* layout galeria de swatches */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* componente swatch */
+.swatch {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background-color: var(--color-superficial);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    outline: 0px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.swatch__color {
+    height: 100px;
+    width: 100%;
+    background-color: var(--color-primario);
+}
+
+.swatch__info {
+    padding: 1rem;
+    text-align: center;
+}
+
+.swatch__nombre {
+    font-family: "Fredoka", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.swatch__codigo {
+    font-family: "Nunito", sans-serif;
+    font-size: 0.875rem;
+    color: var(--color-texto--suave);
+}
+
+.swatch__color--claro {
+    background-color: var(--color-claro);
+}
+
+.swatch__color--oscuro {
+    background-color: var(--color-oscuro);
+}
+
+.swatch__color--acento {
+    background-color: var(--color-acento);
+}
+
+.swatch:hover {
+    transform: translateY(-5px);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.swatch:focus {
+    outline: 2px solid var(--color-primario);
+    outline-offset: 4px;
+}
+/* layout footer */
+footer {
+    padding: 1.5rem 1rem;
+    color: var(--color-texto--suave);
+    background-color: var(--color-superficial);
+    padding: 1rem 2rem;
+    text-align: center;
+    border-top: 1px solid var(--color-borde);
+    margin-top: 2rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+
