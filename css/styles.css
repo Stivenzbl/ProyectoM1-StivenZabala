@@ -1,4 +1,4 @@
-/* Reset de estilos para eliminar márgenes y padding predeterminados */
+/* Reset de estilos para eliminar márgenes y padding predeterminados.*/
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +11,7 @@
     --color-claro: hsl(330, 85%, 72%);
     --color-oscuro: hsl(330, 75%, 40%);
 
-/* acento cian */ 
+    /* acento cian */ 
     --color-acento: hsl(180, 100%, 50%);
     --color-acento--oscuro: hsl(180, 100%, 30%);
 
@@ -21,10 +21,10 @@
     --color-borde: hsl(220, 20%, 80%);
     --color-texto: hsl(220, 20%, 20%);
     --color-texto--suave: hsl(220, 20%, 40%);
-
 }
 
 /* Estilos para el cuerpo de la página */
+
 .body {
     font-family: "Nunito", sans-serif;
     background-color: var(--color-fondo);
@@ -51,6 +51,7 @@ h3 {
 }
 
 /* layout header */
+
 .nav {
     display: flex;
     justify-content: space-between;
@@ -99,6 +100,7 @@ main h2 {
 }
 
 /* layout galeria de swatches */
+
 .galeria {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -107,6 +109,7 @@ main h2 {
 }
 
 /* componente swatch */
+
 .swatch {
     display: flex;
     flex-direction: column;
@@ -163,7 +166,9 @@ main h2 {
     outline: 2px solid var(--color-primario);
     outline-offset: 4px;
 }
-/* layout footer */
+
+/* layout footer  */
+
 footer {
     padding: 1.5rem 1rem;
     color: var(--color-texto--suave);
@@ -174,5 +179,3 @@ footer {
     margin-top: 2rem;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
-
-
