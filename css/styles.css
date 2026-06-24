@@ -7,20 +7,20 @@
 
 :root {
     /* Variable paleta de marca */
-    --color-primario: hsl(330, 85%, 55%);
-    --color-claro: hsl(330, 85%, 72%);
-    --color-oscuro: hsl(330, 75%, 40%);
+    --color-primario:hsl(330, 85%, 55%);    /*  #ec3a8b */
+    --color-claro: hsl(330, 85%, 72%);  /*  #f37bb1 */
+    --color-oscuro: hsl(330, 75%, 40%);    /*  #b31966  */
 
     /* acento cian */ 
-    --color-acento: hsl(180, 100%, 50%);
-    --color-acento--oscuro: hsl(180, 100%, 30%);
+    --color-acento: hsl(190, 90%, 45%); 
+    --color-acento--oscuro: hsl(190, 90%, 35%);
 
     /* NEUTROS HUE FRIO 220 */
     --color-fondo: hsl(220, 30%, 98%);
-    --color-superficial: hsl(220, 20%, 90%);
-    --color-borde: hsl(220, 20%, 80%);
-    --color-texto: hsl(220, 20%, 20%);
-    --color-texto--suave: hsl(220, 20%, 40%);
+    --color-superfice: hsl(0, 0%, 100%);
+    --color-borde: hsl(220, 15%, 88%);
+    --color-texto: hsl(220, 25%, 18%);
+    --color-texto--suave: hsl(220, 12%, 45%);
 }
 
 /* Estilos para el cuerpo de la página */
@@ -57,7 +57,7 @@ h3 {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: var(--color-superficial);
+    background-color: var(--color-superficie);
     border-bottom: 1px solid var(--color-borde);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
@@ -115,7 +115,7 @@ main h2 {
     flex-direction: column;
     border-radius: 0.75rem;
     overflow: hidden;
-    background-color: var(--color-superficial);
+    background-color: var(--color-superficie);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     outline: 0px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -159,7 +159,7 @@ main h2 {
 
 .swatch:hover {
     transform: translateY(-5px);
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    box-shadow: hsl(190, 90% , 45% / 0.25)
 }
 
 .swatch:focus {
@@ -172,10 +172,106 @@ main h2 {
 footer {
     padding: 1.5rem 1rem;
     color: var(--color-texto--suave);
-    background-color: var(--color-superficial);
+    background-color: var(--color-superficie);
     padding: 1rem 2rem;
     text-align: center;
     border-top: 1px solid var(--color-borde);
     margin-top: 2rem;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+@keyframes swatch-aparece {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+     }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.swatch {
+    animation: swatch-aparece 0.2s ease-in-out;
+}
+
+.controles {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-around;
+    gap: 1rem;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px hsl(190, 90% , 45% / 0.25)
+}
+
+.controles__campo {
+    display: flex;
+    gap: 0.35rem;
+}
+
+.controles__label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-texto--suave);
+}
+
+.boton {
+    font-family: "Fredoka", sans-serif;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    border: none;                                                                                                                                                                                                                                                                                                                                                                                                                                            
+    text-decoration: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 
+    background-color 0.2s ease-out
+    transform 0.1s ease-out;
+}
+
+.boton--primario {
+    background-color: var(--color-acento);
+    color: #fff;
+}
+
+.boton--primario:hover {
+    background-color: var(--color-acento--oscuro);
+}
+
+.boton--primario:active {
+    transform: translateY(2px);
+}
+
+.select {
+    font-family: "Nunito", sans-serif;
+    font-size: 1rem;
+    padding: 0.65rem 2.25rem;
+    border: 2px solid var(--color-borde);   
+    border-radius: 0.5rem;  
+    background-color: var(--color-superfice);
+    color: var(--color-texto);                                                                                                                                                                                                                                                                                                                                                                                                                                  
+    cursor: pointer;
+    appearance: none; 
+    -webkit-appearance: none;
+    background-image: url();
+    background-repeat: no-repeat;
+    background-position: right 0.8rem center;
+    background-size: 0.9rem;
+    transition: 
+     border-color 0.2s ease-out
+     box-shadow 0.2s ease-out
+}
+
+.select:hover {
+    border-color: var(--color-claro);
+}
+
+.select:focus-vsible {
+    outline: none;
+    border-color: var(--color-acento);
+    box-shadow: 0 0 0 3px hsl(190, 90% , 45% / 0.25)
 }

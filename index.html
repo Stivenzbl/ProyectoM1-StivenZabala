@@ -24,7 +24,6 @@
       <nav class="nav">
         <span class="nav__logo" >Colorfly Studio</span>
         <ul class="nav__links"> 
-          <li><a class="nav__link" href="#Guardadas">Guardadas</a></li>
           <li><a class="nav__link" href="#Generador">Generador</a></li>
         </ul>
       </nav> 
@@ -34,51 +33,34 @@
     
     <main>
       <section id="Generador">
-        <h2 class="generador1"> Generar paleta</h2>
-      </section> 
+        <h2> Generar paleta</h2>
 
-      <section class="galeria">
-          
-         <article class="swatch"> 
-          <div class="swatch__color swatch__color--primario"></div>
-          <div class="swatch__info">
-            <p class="swatch__nombre">primario</p>
-            <p class="swatch__codigo"> #ec3a8D  hsl(330, 85%, 55%)</p>
+        <!-- nuevo boton: dispara la generacion -->
+         <div class="controles"> 
+          <button class="boton boton--primario" id="generar">Generar Paleta</button>
+          <div class="controles__campo">
+            <label class="controles__label" for="cantidad">Cantidad de colores</label>
+            <select class="select" id="cantidad">
+              <option value = "6">6</option>
+              <option value = "8">8</option>
+              <option value = "9">9</option>
+            </select>
           </div>
-        </article>
+         </div>
 
-        <article class="swatch"> 
-          <div class="swatch__color swatch__color--claro"></div>
-          <div class="swatch__info">
-             <p class="swatch__nombre">primario claro</p>
-             <p class="swatch__codigo">#f47bb8 hsl(330, 85%, 72%)</p>
-           </div>
-        </article>  
-
-        <article class="swatch"> 
-          <div class="swatch__color swatch__color--oscuro"></div>
-          <div class="swatch__info">
-            <p class="swatch__nombre">primario oscuro</p>
-            <p class="swatch__codigo"> #b31966 hsl(330, 75%, 40%)</p>
-          </div>
-        </article>
-         
-        <article class="swatch"> 
-          <div class="swatch__color swatch__color--acento"></div>
-          <div class="swatch__info">
-            <p class="swatch__nombre">acento</p>
-            <p class="swatch__codigo">#00ffff hsl(180, 100%, 50%)</p>
-          </div>
-        </article>
+        <section class="galeria" id="galeria"></section> 
       </section>
-
     </main>
+
+    <footer>
+      <p>&copy; 2026 Paleta de Colores. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="./js/index.js"></script>
     
   </body>
         
 
-  <footer>
-    <p>&copy; 2026 Paleta de Colores. Todos los derechos reservados.</p>
-  </footer>
+
 
 </html>
