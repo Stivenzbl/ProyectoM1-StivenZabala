@@ -38,6 +38,7 @@
         <!-- nuevo boton: dispara la generacion -->
          <div class="controles"> 
           <button class="boton boton--primario" id="generar">Generar Paleta</button>
+          <button class="boton boton--secundario" id="guardar">Guardar paleta</button>
           <div class="controles__campo">
             <label class="controles__label" for="cantidad">Cantidad de colores</label>
             <select class="select" id="cantidad">
@@ -48,8 +49,15 @@
           </div>
          </div>
 
-        <section class="galeria" id="galeria"></section> 
+        <section class="galeria" id="galeria" aria-live="polite"></section>
       </section>
+
+      <!-- Paletas guardadas -->
+<section id="guardadas" class="guardadas">
+  <h2 class="guardadas__titulo">Paletas guardadas</h2>
+  <div class="guardadas__lista" id="guardadas-lista"></div>
+</section>
+
     </main>
 
     <footer>

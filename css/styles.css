@@ -7,48 +7,39 @@
 
 :root {
     /* Variable paleta de marca */
-    --color-primario:hsl(330, 85%, 55%);    /*  #ec3a8b */
-    --color-claro: hsl(330, 85%, 72%);  /*  #f37bb1 */
-    --color-oscuro: hsl(330, 75%, 40%);    /*  #b31966  */
+    --color-primario: hsl(330, 85%, 55%);
+    --color-claro: hsl(330, 85%, 72%);
+    --color-oscuro: hsl(330, 75%, 40%);
 
-    /* acento cian */ 
-    --color-acento: hsl(190, 90%, 45%); 
+    /* acento cian */
+    --color-acento: hsl(190, 90%, 45%);
     --color-acento--oscuro: hsl(190, 90%, 35%);
 
     /* NEUTROS HUE FRIO 220 */
     --color-fondo: hsl(220, 30%, 98%);
-    --color-superfice: hsl(0, 0%, 100%);
+    --color-superficie: hsl(0, 0%, 100%);  /* FIX: typo "superfice" → "superficie" */
     --color-borde: hsl(220, 15%, 88%);
     --color-texto: hsl(220, 25%, 18%);
     --color-texto--suave: hsl(220, 12%, 45%);
 }
 
-/* Estilos para el cuerpo de la página */
-
-.body {
+/* FIX: ".body" no aplica estilos — debe ser "body" */
+body {
     font-family: "Nunito", sans-serif;
     background-color: var(--color-fondo);
     color: var(--color-texto);
     line-height: 1.6;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
     font-family: "Fredoka", sans-serif;
     line-height: 1.2;
     color: var(--color-texto);
 }
 
-h1 {
-    font-size: 2.5rem;
-}
-
-h2 {
-    font-size: 1.75rem;
-}
-
-h3 {
-    font-size: 1.25rem;
-}
+h1 { font-size: 2.5rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.25rem; }
 
 /* layout header */
 
@@ -92,7 +83,6 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem 1.5rem;
-
 }
 
 main h2 {
@@ -119,6 +109,7 @@ main h2 {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     outline: 0px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: swatch-aparece 0.2s ease-in-out;
 }
 
 .swatch__color {
@@ -145,21 +136,14 @@ main h2 {
     color: var(--color-texto--suave);
 }
 
-.swatch__color--claro {
-    background-color: var(--color-claro);
-}
-
-.swatch__color--oscuro {
-    background-color: var(--color-oscuro);
-}
-
-.swatch__color--acento {
-    background-color: var(--color-acento);
-}
+.swatch__color--claro  { background-color: var(--color-claro); }
+.swatch__color--oscuro { background-color: var(--color-oscuro); }
+.swatch__color--acento { background-color: var(--color-acento); }
 
 .swatch:hover {
     transform: translateY(-5px);
-    box-shadow: hsl(190, 90% , 45% / 0.25)
+    /* FIX: faltaba tamaño del shadow y estaba malformado */
+    box-shadow: 0px 8px 24px hsl(190, 90%, 45%, 0.25);
 }
 
 .swatch:focus {
@@ -167,10 +151,9 @@ main h2 {
     outline-offset: 4px;
 }
 
-/* layout footer  */
+/* layout footer */
 
 footer {
-    padding: 1.5rem 1rem;
     color: var(--color-texto--suave);
     background-color: var(--color-superficie);
     padding: 1rem 2rem;
@@ -180,20 +163,20 @@ footer {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
+/* animación de entrada de los swatches */
+
 @keyframes swatch-aparece {
     from {
         opacity: 0;
         transform: translateY(8px);
-     }
-    to{
+    }
+    to {
         opacity: 1;
         transform: translateY(0px);
     }
 }
 
-.swatch {
-    animation: swatch-aparece 0.2s ease-in-out;
-}
+/* controles */
 
 .controles {
     display: flex;
@@ -206,7 +189,7 @@ footer {
     background-color: var(--color-superficie);
     border: 1px solid var(--color-borde);
     border-radius: 0.75rem;
-    box-shadow: 0 2px 8px hsl(190, 90% , 45% / 0.25)
+    box-shadow: 0 2px 8px hsl(190, 90%, 45%, 0.25);
 }
 
 .controles__campo {
@@ -224,13 +207,12 @@ footer {
     font-family: "Fredoka", sans-serif;
     font-size: 1rem;
     padding: 0.75rem 1.5rem;
-    border: none;                                                                                                                                                                                                                                                                                                                                                                                                                                            
+    border: none;
     text-decoration: none;
     border-radius: 0.5rem;
     cursor: pointer;
-    transition: 
-    background-color 0.2s ease-out
-    transform 0.1s ease-out;
+    /* FIX: faltaban comas entre propiedades de transition */
+    transition: background-color 0.2s ease-out, transform 0.1s ease-out;
 }
 
 .boton--primario {
@@ -250,28 +232,205 @@ footer {
     font-family: "Nunito", sans-serif;
     font-size: 1rem;
     padding: 0.65rem 2.25rem;
-    border: 2px solid var(--color-borde);   
-    border-radius: 0.5rem;  
-    background-color: var(--color-superfice);
-    color: var(--color-texto);                                                                                                                                                                                                                                                                                                                                                                                                                                  
+    border: 2px solid var(--color-borde);
+    border-radius: 0.5rem;
+    background-color: var(--color-superficie);
+    color: var(--color-texto);
     cursor: pointer;
-    appearance: none; 
+    appearance: none;
     -webkit-appearance: none;
-    background-image: url();
     background-repeat: no-repeat;
     background-position: right 0.8rem center;
     background-size: 0.9rem;
-    transition: 
-     border-color 0.2s ease-out
-     box-shadow 0.2s ease-out
+    /* FIX: faltaban comas entre propiedades de transition */
+    transition: border-color 0.2s ease-out, box-shadow 0.2s ease-out;
 }
 
 .select:hover {
     border-color: var(--color-claro);
 }
 
-.select:focus-vsible {
+/* FIX: "focus-vsible" → "focus-visible" */
+.select:focus-visible {
     outline: none;
     border-color: var(--color-acento);
-    box-shadow: 0 0 0 3px hsl(190, 90% , 45% / 0.25)
+    box-shadow: 0 0 0 3px hsl(190, 90%, 45%, 0.25);
+}
+
+/* ─── Toast de microfeedback ─────────────────────────────────────────────── */
+
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(1rem);
+    background-color: var(--color-texto);
+    color: var(--color-superficie);
+    font-family: "Nunito", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.toast--visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ─── Tooltip del swatch ─────────────────────────────────────────────────── */
+
+.swatch__color {
+    position: relative;
+    cursor: pointer;
+}
+
+.swatch__tooltip {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: hsla(220, 25%, 18%, 0.85);
+    color: #fff;
+    font-family: "Nunito", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: 1rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.swatch__color:hover .swatch__tooltip {
+    opacity: 1;
+}
+
+/* ─── Candado de bloqueo ─────────────────────────────────────────────────── */
+
+.swatch__candado {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: hsla(220, 25%, 18%, 0.6);
+    border: none;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.swatch__color:hover .swatch__candado {
+    opacity: 1;
+}
+
+.swatch--bloqueado .swatch__candado {
+    opacity: 1;
+    background: hsla(220, 25%, 18%, 0.85);
+}
+
+.swatch--bloqueado .swatch__color {
+    cursor: default;
+}
+
+/* ─── Botón secundario ───────────────────────────────────────────────────── */
+
+.boton--secundario {
+    background-color: var(--color-superficie);
+    color: var(--color-acento);
+    border: 2px solid var(--color-acento);
+}
+
+.boton--secundario:hover {
+    background-color: var(--color-acento);
+    color: #fff;
+}
+
+/* ─── Paletas guardadas ──────────────────────────────────────────────────── */
+
+.guardadas {
+    margin-top: 3rem;
+}
+
+.guardadas__titulo {
+    margin-bottom: 1rem;
+}
+
+.guardadas__lista {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.guardada {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px hsl(190, 90%, 45%, 0.1);
+}
+
+.guardada__colores {
+    display: flex;
+    flex: 1;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.guardada__chip {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.4rem;
+    flex-shrink: 0;
+}
+
+.guardada__acciones {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.guardada__btn {
+    font-family: "Nunito", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.4rem 0.9rem;
+    border-radius: 0.4rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.guardada__btn--cargar {
+    background-color: var(--color-acento);
+    color: #fff;
+}
+
+.guardada__btn--cargar:hover {
+    background-color: var(--color-acento--oscuro);
+}
+
+.guardada__btn--eliminar {
+    background-color: var(--color-fondo);
+    color: var(--color-texto--suave);
+    border: 1px solid var(--color-borde);
+}
+
+.guardada__btn--eliminar:hover {
+    background-color: hsl(0, 80%, 95%);
+    color: hsl(0, 70%, 45%);
+    border-color: hsl(0, 70%, 45%);
 }
