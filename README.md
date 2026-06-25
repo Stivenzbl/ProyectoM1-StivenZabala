@@ -78,6 +78,23 @@ git clone https://github.com/Stivenzbl/ProyectoM1-StivenZabala.git
 
 ---
 
+## Vista previa
+
+### Vista general
+![Vista general de la aplicación](Documentación/capturas/01-vista-general.png)
+
+### Selector de cantidad de colores
+![Selector de cantidad](Documentación/capturas/02-selector-cantidad.png)
+
+### Toast de microfeedback al generar
+![Toast paleta generada](Documentación/capturas/03-toast-paleta-generada.png)
+
+### Tooltip y bloqueo de color
+![Tooltip y candado](Documentación/capturas/04-tooltip-y-candado.png)
+
+### Paletas guardadas
+![Paletas guardadas](Documentación/capturas/05-paletas-guardadas.png)
+
 ## Decisiones técnicas
 
 **Generación de colores en HSL**  
